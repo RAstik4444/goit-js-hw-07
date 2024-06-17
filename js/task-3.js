@@ -2,12 +2,9 @@ const textInput = document.querySelector("input#name-input");
 const output = document.querySelector("span#name-output");
 
 textInput.addEventListener("input", (event) => {
-  output.textContent = event.currentTarget.value;
+    output.textContent = event.currentTarget.value.trim();
+
+  if (output.textContent === "") {
+    output.textContent = "Anonymous";
+  }
 });
-
-// const textInput = document.querySelector(".text-input");
-// const output = document.querySelector(".output");
-
-// textInput.addEventListener("input", (event) => {
-//   output.textContent = event.currentTarget.value;
-// });
